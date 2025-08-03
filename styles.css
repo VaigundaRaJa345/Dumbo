@@ -106,6 +106,7 @@ header p {
   animation: fadein 2s ease-in;
 }
 
+
 /* Responsive video fit fix */
 @media (max-width: 768px) {
   video#bgvid {
@@ -160,9 +161,8 @@ header p {
 
 .floating-upload-btn {
   position: relative;
-  bottom: 20px;
-  left: 45%;
-  transform: translateX(-50%);
+  margin-top: 50px;
+  display: inline-block;
   background: #ff69b4;
   color: white;
   font-weight: bold;
@@ -175,8 +175,81 @@ header p {
   font-family: 'Comic Sans MS', cursive;
 }
 
-.floating-upload-btn:hover {
-  background: #ff1493;
-  transform: translateX(-50%) scale(1.05);
+/* Center it using the container */
+.upload-btn-wrapper {
+  text-align: center;
+  width: 100%;
 }
 
+.floating-upload-btn:hover {
+  background: #ff1493;
+  transform: scale(1.05);
+}
+
+
+.floating-upload-btn:hover {
+  background: #ff1493;
+  transform: translateY(-25%) scale(1.05);
+}
+
+#group-gifts {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.gift-container {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(255,105,180,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(255,105,180,0.3);
+}
+
+.gift-container h2 {
+  font-size: 1.4em;
+  margin-bottom: 12px;
+  color: #ffb6c1;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.gift-container iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.gift-container p {
+  margin-top: 14px;
+  font-size: 0.95em;
+  font-style: italic;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 2px #000;
+}
+
+
+.footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffb6c1;
+  font-size: 1.1em;
+  font-style: italic;
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
