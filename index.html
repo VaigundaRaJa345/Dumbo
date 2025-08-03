@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Dumbo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background video -->
+  <video id="bgvid" autoplay muted loop playsinline>
+    <source src="media/13134125_1920_1080_30fps.mp4" type="video/mp4">
+    Your browser doesn’t support the video tag.
+  </video>
+
+  <!-- Optional audio -->
+  <audio id="bgmusic" autoplay loop>
+    <source src="media/Friendship-Anthem-MassTamilan.io-[AudioTrimmer.com].mp3" type="audio/mpeg">
+    Your browser doesn’t support audio.
+  </audio>
+
+  <div class="overlay">
+    <header>
+      <h1>Dumbo</h1>
+      <p>Memories of friendship, forever stored.</p>
+    </header>
+    <section id="gallery">
+      <!-- JS will inject memory items -->
+    </section>
+  </div>
+
+ <div>
+  <a href="https://drive.google.com/drive/folders/1UtGjZ8wjLZztcmHhBfRhC-mlFcdZ8aJ1?usp=drive_link" class="floating-upload-btn" target="_blank">
+  💾 More Memories
+</a></div>
+
+
+
+  <script src="script.js"></script>
+  <script>
+  const bgmusic = document.getElementById('bgmusic');
+  bgmusic.play().catch(e => {
+    console.log("Autoplay prevented. User interaction may be required.", e);
+  });
+</script>
+
+</body>
+</html>

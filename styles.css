@@ -1,0 +1,182 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Comic Sans MS', cursive;
+  color: #fff;
+  overflow-x: hidden;   /* block horizontal scroll only */
+  overflow-y: auto; 
+}
+
+/* Background video */
+video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Background audio control (optional button can be added) */
+audio#bgmusic {
+  display: none; /* keep it hidden unless you want to control it */
+}
+
+/* Overlay content */
+.overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+/* Header section */
+header h1 {
+  font-size: 4em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px #ff69b4;
+}
+
+header p {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 6px #ffb6c1;
+}
+
+/* Gallery layout */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+/* Memory cards */
+.memory {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.memory:hover {
+  transform: scale(1.03);
+}
+
+.memory img,
+.memory video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.memory p {
+  margin-top: 10px;
+  font-size: 1em;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+/* Fade-in animation */
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.overlay {
+  animation: fadein 2s ease-in;
+}
+
+/* Responsive video fit fix */
+@media (max-width: 768px) {
+  video#bgvid {
+    width: auto;
+    height: 100%;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+}
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff69b4;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.1);
+}
+
+.upload-link {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.upload-link a {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #ff69b4;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.upload-link a:hover {
+  background: #ff1493;
+}
+
+.floating-upload-btn {
+  position: relative;
+  bottom: 20px;
+  left: 45%;
+  transform: translateX(-50%);
+  background: #ff69b4;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(255,105,180,0.6);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.floating-upload-btn:hover {
+  background: #ff1493;
+  transform: translateX(-50%) scale(1.05);
+}
+
