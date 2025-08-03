@@ -39,12 +39,12 @@ const memories = [
   {
     type: 'image',
     src: 'media/images/img10.jpeg',
-    caption: 'Laughs we never forget'
+    caption: 'That Evening'
   },
   {
     type: 'image',
     src: 'media/images/img11.jpeg',
-    caption: 'Laughs we never forget'
+    caption: 'The unforgettable bus ride'
   }
 ];
 
@@ -69,3 +69,4 @@ memories.forEach(mem => {
   }
   gallery.appendChild(div);
 });
+
